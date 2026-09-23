@@ -1,0 +1,2975 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Happy Birthday 泰米 ♡</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #dcecff;
+    --pink: #ffe5ef;
+    --lavender: #eee8ff;
+    --deep: #514c83;
+    --middle: #7d77b0;
+    --light: #aaa4d3;
+    --card: rgba(255,255,255,.94);
+    --character-size: 145px;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "PingFang TC",
+        "Noto Sans TC",
+        Arial,
+        sans-serif;
+
+    color: var(--deep);
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7f3ff,
+            #f2edff,
+            #fff0f5
+        );
+
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    font: inherit;
+}
+
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.app {
+    width: min(100%, 430px);
+    min-height: 100dvh;
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e8f4ff 0%,
+            #f8f4ff 50%,
+            #fff1f6 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    padding:
+        max(18px, env(safe-area-inset-top))
+        18px
+        10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(232,244,255,.98),
+            rgba(232,244,255,.7),
+            transparent
+        );
+}
+
+.progress {
+    height: 5px;
+    background: #d8e5fa;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 8%;
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #9dd6ff,
+            #c9a8ff,
+            #ffacc9
+        );
+
+    transition: width .4s ease;
+}
+
+
+/* =========================
+   SCENE
+========================= */
+
+.scene {
+    display: none;
+
+    min-height: calc(100dvh - 60px);
+
+    padding:
+        18px
+        20px
+        calc(30px + env(safe-area-inset-bottom));
+}
+
+.scene.active {
+    display: flex;
+    flex-direction: column;
+    animation: sceneIn .35s ease;
+}
+
+@keyframes sceneIn {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    width: 100%;
+    position: relative;
+
+    padding: 19px 20px;
+
+    background: var(--card);
+
+    border: 2px solid var(--deep);
+    border-radius: 28px;
+
+    box-shadow:
+        0 16px 35px
+        rgba(81,76,131,.08);
+}
+
+.card::after {
+    content: "";
+
+    position: absolute;
+    inset: 8px;
+
+    border:
+        1.5px dashed
+        var(--deep);
+
+    border-radius: 21px;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.title {
+    position: relative;
+    z-index: 3;
+
+    margin: 4px 0 3px;
+
+    text-align: center;
+
+    font-size:
+        clamp(26px, 8vw, 34px);
+
+    line-height: 1.08;
+}
+
+.subtitle {
+    position: relative;
+    z-index: 3;
+
+    text-align: center;
+
+    color: var(--middle);
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+.scene-text {
+    position: relative;
+    z-index: 3;
+
+    text-align: center;
+
+    color: var(--middle);
+
+    line-height: 1.6;
+}
+
+.big-title {
+    margin: 13px 0 5px;
+
+    text-align: center;
+
+    font-size:
+        clamp(32px, 9vw, 40px);
+
+    line-height: 1.1;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+.character {
+    display: block;
+
+    position: relative;
+    z-index: 3;
+
+    width: var(--character-size);
+    height: var(--character-size);
+
+    object-fit: contain;
+
+    margin: 0 auto;
+}
+
+.opening-character {
+    display: block;
+
+    width: 210px;
+    height: 270px;
+
+    object-fit: contain;
+
+    margin: 5px auto;
+}
+
+.couple-image {
+    display: block;
+
+    position: relative;
+    z-index: 3;
+
+    width: min(280px, 92%);
+    height: 235px;
+
+    object-fit: contain;
+
+    margin: 0 auto 5px;
+}
+
+.center {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.next {
+    display: block;
+
+    width: min(250px, 76%);
+    min-height: 55px;
+
+    margin: 21px auto 0;
+
+    padding: 12px 20px;
+
+    border: 0;
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b9a5ee,
+            #a995e4
+        );
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 22px
+        rgba(128,105,190,.18);
+}
+
+.next:active {
+    transform: scale(.97);
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-list {
+    position: relative;
+    z-index: 3;
+}
+
+.profile-row {
+    min-height: 50px;
+
+    padding: 6px 1px 7px;
+
+    border-bottom:
+        1px solid
+        rgba(81,76,131,.08);
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.profile-row:last-child {
+    border-bottom: none;
+}
+
+.profile-row:active {
+    transform: scale(.99);
+}
+
+.question {
+    color: var(--middle);
+    font-size: 12px;
+    margin-bottom: 1px;
+}
+
+.answer {
+    color: var(--deep);
+    font-size: 19px;
+    font-weight: 750;
+}
+
+
+/* =========================
+   RESPONSE
+========================= */
+
+.response {
+    display: none;
+
+    position: relative;
+    z-index: 5;
+
+    min-height: 48px;
+
+    margin-top: 11px;
+
+    padding: 11px 14px;
+
+    border: 2px solid var(--deep);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #edf7ff,
+            #fff0f6
+        );
+
+    text-align: center;
+
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.response.show {
+    display: block;
+    animation: responseIn .25s ease;
+}
+
+@keyframes responseIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.rating {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    min-height: 32px;
+
+    padding-top: 5px;
+}
+
+.heart {
+    width: 19px;
+    height: 19px;
+
+    position: relative;
+
+    margin: 6px 3px 2px;
+
+    background: #f59bbb;
+
+    transform: rotate(45deg);
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+
+    width: 19px;
+    height: 19px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: inherit;
+}
+
+.heart::before {
+    left: -9.5px;
+}
+
+.heart::after {
+    top: -9.5px;
+}
+
+.float-heart {
+    width: 18px;
+    height: 18px;
+
+    position: fixed;
+    z-index: 1200;
+
+    background: #f59bbb;
+
+    transform: rotate(45deg);
+
+    pointer-events: none;
+
+    animation:
+        floatHeart
+        1.5s
+        ease
+        forwards;
+}
+
+.float-heart::before,
+.float-heart::after {
+    content: "";
+
+    width: 18px;
+    height: 18px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: inherit;
+}
+
+.float-heart::before {
+    left: -9px;
+}
+
+.float-heart::after {
+    top: -9px;
+}
+
+@keyframes floatHeart {
+    to {
+        opacity: 0;
+
+        transform:
+            translateY(-130px)
+            rotate(45deg)
+            scale(1.3);
+    }
+}
+
+
+/* =========================
+   US
+========================= */
+
+.us-title {
+    position: relative;
+    z-index: 3;
+
+    text-align: center;
+
+    font-size: 30px;
+
+    margin: 3px 0 1px;
+}
+
+.us-subtitle {
+    position: relative;
+    z-index: 3;
+
+    text-align: center;
+
+    color: var(--middle);
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+}
+
+.us-grid {
+    position: relative;
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+
+    margin-top: 7px;
+}
+
+.person-card {
+    padding: 12px 10px;
+
+    border:
+        1.5px solid
+        rgba(81,76,131,.35);
+
+    border-radius: 17px;
+
+    background:
+        rgba(245,243,255,.58);
+}
+
+.person-name {
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 850;
+
+    margin-bottom: 8px;
+}
+
+.person-line {
+    margin: 6px 0;
+
+    color: var(--deep);
+
+    font-size: 13px;
+    font-weight: 650;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   DISTANCE
+========================= */
+
+.distance-stage {
+    width: 100%;
+    height: 420px;
+
+    position: relative;
+    z-index: 3;
+}
+
+.route {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    inset: 0;
+
+    overflow: visible;
+}
+
+.route-path {
+    fill: none;
+
+    stroke: #9b91ca;
+
+    stroke-width: 3;
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 8 9;
+}
+
+.city {
+    width: 130px;
+
+    position: absolute;
+
+    z-index: 5;
+
+    text-align: center;
+
+    color: var(--deep);
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.city img {
+    display: block;
+
+    width: 125px;
+    height: 125px;
+
+    object-fit: contain;
+
+    margin: auto;
+}
+
+.boston {
+    left: -3px;
+    top: 0;
+}
+
+.taiwan {
+    right: -3px;
+    bottom: 0;
+}
+
+.too-far {
+    position: absolute;
+
+    left: 50%;
+    top: 48%;
+
+    z-index: 7;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-8deg);
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.85);
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.moving {
+    width: 105px;
+    height: 105px;
+
+    position: absolute;
+
+    z-index: 20;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   SHARED MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    padding: 24px;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(70,66,110,.28);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: min(350px, 100%);
+
+    padding: 22px 22px 20px;
+
+    border:
+        2px solid
+        var(--deep);
+
+    border-radius: 28px;
+
+    background: white;
+
+    text-align: center;
+
+    box-shadow:
+        0 22px 50px
+        rgba(64,57,110,.18);
+
+    animation:
+        modalIn
+        .25s
+        ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px)
+            scale(.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+.modal-image {
+    display: block;
+
+    width: 100%;
+    height: 270px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+}
+
+.modal-text {
+    margin-top: 6px;
+
+    font-size: 18px;
+    font-weight: 750;
+
+    line-height: 1.45;
+}
+
+.modal-small {
+    margin-top: 5px;
+
+    color: var(--middle);
+
+    font-size: 12px;
+}
+
+.modal-button {
+    display: block;
+
+    width: min(220px, 80%);
+    min-height: 48px;
+
+    margin: 17px auto 0;
+
+    padding: 10px 18px;
+
+    border: 0;
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b9a5ee,
+            #a995e4
+        );
+
+    color: white;
+
+    font-weight: 750;
+
+    cursor: pointer;
+}
+
+.modal-button:active {
+    transform: scale(.97);
+}
+
+
+/* =========================
+   WISH
+========================= */
+
+.cake-button {
+    display: block;
+
+    width: 100%;
+
+    margin: 22px auto 10px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+    z-index: 4;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wish-cake-image {
+    display: block;
+
+    width: min(315px, 96%);
+    height: auto;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    transition:
+        transform .22s ease,
+        opacity .22s ease;
+}
+
+.cake-button:active .wish-cake-image {
+    transform: scale(.96);
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video {
+    display: block;
+
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+
+    max-height: 520px;
+
+    border-radius: 22px;
+
+    background: #eee;
+}
+
+
+/* =========================
+   SMALL SCREEN
+========================= */
+
+@media (max-height: 730px) {
+
+    :root {
+        --character-size: 120px;
+    }
+
+    .card {
+        padding:
+            14px
+            18px
+            16px;
+    }
+
+    .profile-row {
+        min-height: 44px;
+
+        padding:
+            4px 1px
+            5px;
+    }
+
+    .answer {
+        font-size: 17px;
+    }
+
+    .distance-stage {
+        height: 370px;
+    }
+
+    .modal-image {
+        height: 225px;
+    }
+
+    .wish-cake-image {
+        width: min(270px, 92%);
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="app">
+
+<div class="progress-wrap">
+    <div class="progress">
+        <div
+            class="progress-bar"
+            id="progressBar">
+        </div>
+    </div>
+</div>
+
+
+<!-- =========================
+     1 OPENING
+========================= -->
+
+<section class="scene active" id="scene1">
+
+    <div class="center">
+
+        <div class="scene-text">
+            欸欸...好像有人今天生日喔
+        </div>
+
+        <img
+            class="opening-character"
+            src="assets/tai_birthday.png"
+            alt="泰米">
+
+        <div class="scene-text">
+            there you are ♡
+        </div>
+
+        <h1 class="big-title">
+            Happy Birthday ~
+        </h1>
+
+        <div class="scene-text">
+            birthday boy
+        </div>
+
+        <button
+            class="next"
+            onclick="go(2)">
+            that's me!
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     2 泰米
+========================= -->
+
+<section class="scene" id="scene2">
+
+    <div class="card">
+
+        <img
+            class="character"
+            src="assets/tai_birthday.png"
+            alt="泰米">
+
+        <h1 class="title">
+            泰米 · BIRTHDAY BOY
+        </h1>
+
+        <div class="subtitle">
+            每一格都藏了一點東西 點點看你的名字♡♡
+        </div>
+
+
+        <div class="profile-list">
+
+            <div
+                class="profile-row"
+                onclick="boy('name')">
+
+                <div class="question">
+                    What's your name?
+                </div>
+
+                <div class="answer">
+                    陳泰瑜
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="boy('birthday')">
+
+                <div class="question">
+                    Birthday?
+                </div>
+
+                <div class="answer">
+                    1995.09.26
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="boy('age')">
+
+                <div class="question">
+                    How old are you now?
+                </div>
+
+                <div class="answer">
+                    31 歲
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="boy('potato')">
+
+                <div class="question">
+                    Favorite activity?
+                </div>
+
+                <div class="answer">
+                    當 potato
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="boy('skill')">
+
+                <div class="question">
+                    Special skill?
+                </div>
+
+                <div class="answer">
+                    耍廢
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="boy('phone')">
+
+                <div class="question">
+                    Most annoying habit?
+                </div>
+
+                <div class="answer">
+                    滑手機
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="boy('rating')">
+
+                <div class="question">
+                    Girlfriend rating?
+                </div>
+
+                <div
+                    class="rating"
+                    id="ratingHearts">
+
+                    <span class="heart"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="response"
+            id="boyResponse">
+        </div>
+
+    </div>
+
+
+    <button
+        class="next"
+        onclick="go(3)">
+        好啦下一個
+    </button>
+
+</section>
+
+
+<!-- =========================
+     3 綺綺
+========================= -->
+
+<section class="scene" id="scene3">
+
+    <div class="card">
+
+        <img
+            class="character"
+            src="assets/chi_wave.png"
+            alt="綺綺">
+
+        <h1 class="title">
+            綺綺 · GIRLFRIEND
+        </h1>
+
+        <div class="subtitle">
+            每一個都可以點點看 taptap ♡
+        </div>
+
+
+        <div class="profile-list">
+
+            <div
+                class="profile-row"
+                onclick="girl('name')">
+
+                <div class="question">
+                    What's your name?
+                </div>
+
+                <div class="answer">
+                    高婉綺
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="girl('where')">
+
+                <div class="question">
+                    Where are you?
+                </div>
+
+                <div class="answer">
+                    Boston
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="girl('boyfriend')">
+
+                <div class="question">
+                    Where's your boyfriend?
+                </div>
+
+                <div class="answer">
+                    Taiwan
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="girl('mission')">
+
+                <div class="question">
+                    Current mission?
+                </div>
+
+                <div class="answer">
+                    想辦法參加你的生日
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="girl('delivery')">
+
+                <div class="question">
+                    Girlfriend delivery?
+                </div>
+
+                <div class="answer">
+                    FAILED ×
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="girl('why')">
+
+                <div class="question">
+                    Why?
+                </div>
+
+                <div class="answer">
+                    太遠ㄌ
+                </div>
+
+            </div>
+
+
+            <div
+                class="profile-row"
+                onclick="girl('backup')">
+
+                <div class="question">
+                    Backup plan?
+                </div>
+
+                <div
+                    class="answer"
+                    id="backupAnswer">
+                    正在想...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="response"
+            id="girlResponse">
+        </div>
+
+    </div>
+
+
+    <button
+        class="next"
+        onclick="go(4)">
+        然後勒 →
+    </button>
+
+</section>
+
+
+<!-- =========================
+     4 US
+========================= -->
+
+<section class="scene" id="scene4">
+
+    <div class="card">
+
+        <div class="subtitle">
+            introducing...
+        </div>
+
+        <h1 class="us-title">
+            泰米 & 綺綺 ♡
+        </h1>
+
+        <div class="us-subtitle">
+            same team
+            <br>
+            always :)
+        </div>
+
+
+        <img
+            class="couple-image"
+            src="assets/together.png"
+            alt="泰米和綺綺">
+
+
+        <div class="us-grid">
+
+            <div class="person-card">
+
+                <div class="person-name">
+                    泰米
+                </div>
+
+                <div class="person-line">
+                    tall
+                </div>
+
+                <div class="person-line">
+                    calm
+                </div>
+
+                <div class="person-line">
+                    a little goofy
+                </div>
+
+                <div class="person-line">
+                    serious, but is sweet
+                </div>
+
+                <div class="person-line">
+                    綺綺最喜歡的人 ♡
+                </div>
+
+            </div>
+
+
+            <div class="person-card">
+
+                <div class="person-name">
+                    綺綺
+                </div>
+
+                <div class="person-line">
+                    shorter
+                </div>
+
+                <div class="person-line">
+                    always hungry
+                </div>
+
+                <div class="person-line">
+                    overthinker
+                </div>
+
+                <div class="person-line">
+                    loves 泰米 a lot
+                </div>
+
+                <div class="person-line">
+                    currently in Boston
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="next"
+        onclick="go(5)">
+        but...
+    </button>
+
+</section>
+
+
+<!-- =========================
+     5 DISTANCE
+========================= -->
+
+<section class="scene" id="scene5">
+
+    <div class="card">
+
+        <h1 class="title">
+            小問題
+        </h1>
+
+        <div class="subtitle">
+            我們現在有點遠
+        </div>
+
+
+        <div class="distance-stage">
+
+            <svg
+                class="route"
+                viewBox="0 0 340 420"
+                preserveAspectRatio="none">
+
+                <path
+                    class="route-path"
+                    d="
+                    M 72 92
+                    C 250 80, 290 125, 255 175
+                    C 215 230, 80 195, 82 270
+                    C 84 335, 245 300, 272 352
+                    ">
+                </path>
+
+            </svg>
+
+
+            <div class="city boston">
+
+                <img
+                    src="assets/chi_wave.png"
+                    alt="綺綺">
+
+                綺綺
+                <br>
+                Boston
+
+            </div>
+
+
+            <div class="city taiwan">
+
+                <img
+                    src="assets/tai_idle.png"
+                    alt="泰米">
+
+                泰米
+                <br>
+                Taiwan
+
+            </div>
+
+
+            <div class="too-far">
+                太遠ㄌ
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="next"
+        onclick="go(6)">
+        那怎麼辦
+    </button>
+
+</section>
+
+
+<!-- =========================
+     6 GIRLFRIEND DELIVERY
+========================= -->
+
+<section class="scene" id="scene6">
+
+    <div class="card">
+
+        <h1 class="title">
+            GIRLFRIEND DELIVERY
+        </h1>
+
+        <div class="subtitle">
+            正在努力寄本人回去
+        </div>
+
+
+        <div
+            class="distance-stage"
+            id="deliveryStage">
+
+            <svg
+                class="route"
+                viewBox="0 0 340 420"
+                preserveAspectRatio="none">
+
+                <path
+                    id="deliveryPath"
+                    class="route-path"
+                    d="
+                    M 72 92
+                    C 250 80, 290 125, 255 175
+                    C 215 230, 80 195, 82 270
+                    C 84 335, 245 300, 272 352
+                    ">
+                </path>
+
+            </svg>
+
+
+            <div class="city boston">
+
+                <img
+                    src="assets/chi_wave.png"
+                    alt="綺綺">
+
+                Boston
+
+            </div>
+
+
+            <div class="city taiwan">
+
+                <img
+                    src="assets/tai_idle.png"
+                    alt="泰米">
+
+                Taiwan
+
+            </div>
+
+
+            <img
+                class="moving"
+                id="deliveryChi"
+                src="assets/chi_travel.png"
+                alt="綺綺">
+
+        </div>
+
+
+        <div
+            class="response"
+            id="deliveryResponse">
+        </div>
+
+    </div>
+
+
+    <button
+        class="next"
+        id="deliveryButton"
+        onclick="tryDelivery()">
+        寄送女朋友
+    </button>
+
+
+    <button
+        class="next"
+        id="planButton"
+        style="display:none"
+        onclick="go(7)">
+        Plan B 出發
+    </button>
+
+</section>
+
+
+<!-- =========================
+     7 PLAN B
+========================= -->
+
+<section class="scene" id="scene7">
+
+    <div class="card">
+
+        <h1 class="title">
+            PLAN B
+        </h1>
+
+        <div class="subtitle">
+            本人不行的話 那就換別的
+        </div>
+
+
+        <img
+            class="couple-image"
+            src="assets/chi_cake.png"
+            alt="綺綺和蛋糕">
+
+
+        <div class="response show">
+            蛋糕可以代替我先到
+        </div>
+
+    </div>
+
+
+    <button
+        class="next"
+        onclick="go(8)">
+        送出去 →
+    </button>
+
+</section>
+
+
+<!-- =========================
+     8 CAKE DELIVERY
+========================= -->
+
+<section class="scene" id="scene8">
+
+    <div class="card">
+
+        <h1 class="title">
+            CAKE DELIVERY
+        </h1>
+
+        <div class="subtitle">
+            這次應該可以吧
+        </div>
+
+
+        <div
+            class="distance-stage"
+            id="cakeStage">
+
+            <svg
+                class="route"
+                viewBox="0 0 340 420"
+                preserveAspectRatio="none">
+
+                <path
+                    id="cakePath"
+                    class="route-path"
+                    d="
+                    M 72 92
+                    C 250 80, 290 125, 255 175
+                    C 215 230, 80 195, 82 270
+                    C 84 335, 245 300, 272 352
+                    ">
+                </path>
+
+            </svg>
+
+
+            <div class="city boston">
+
+                <img
+                    src="assets/chi_wave.png"
+                    alt="綺綺">
+
+                Boston
+
+            </div>
+
+
+            <div class="city taiwan">
+
+                <img
+                    src="assets/tai_idle.png"
+                    alt="泰米">
+
+                Taiwan
+
+            </div>
+
+
+            <img
+                class="moving"
+                id="movingCake"
+                src="assets/cake.png"
+                alt="蛋糕">
+
+        </div>
+
+
+        <div
+            class="response"
+            id="cakeResponse">
+        </div>
+
+    </div>
+
+
+    <button
+        class="next"
+        id="cakeButton"
+        onclick="sendCake()">
+        Plan B 出發
+    </button>
+
+
+    <button
+        class="next"
+        id="cakeNext"
+        style="display:none"
+        onclick="go(9)">
+        然後勒 →
+    </button>
+
+</section>
+
+
+<!-- =========================
+     9 STILL US
+========================= -->
+
+<section class="scene" id="scene9">
+
+    <div class="card">
+
+        <img
+            class="couple-image"
+            src="assets/together.png"
+            alt="泰米和綺綺">
+
+        <h1 class="title">
+            still us ♡
+        </h1>
+
+        <div class="scene-text">
+            雖然今年生日沒辦法本人出現
+            <br>
+            但我還是有努力混進來
+        </div>
+
+
+        <div class="response show">
+            看吧 我還是有參加到
+        </div>
+
+    </div>
+
+
+    <button
+        class="next"
+        onclick="go(10)">
+        還有？
+    </button>
+
+</section>
+
+
+<!-- =========================
+     10 WISH
+========================= -->
+
+<section class="scene" id="scene10">
+
+    <div class="card">
+
+        <h1 class="title">
+            MAKE A WISH
+        </h1>
+
+        <div class="scene-text">
+            好了現在可以許願
+            <br>
+            點一下蛋糕把蠟燭吹掉 ♡
+        </div>
+
+
+        <button
+            class="cake-button"
+            id="wishCakeButton"
+            onclick="blowCandle()">
+
+            <img
+                id="wishCake"
+                class="wish-cake-image"
+                src="assets/candle.png"
+                alt="點亮蠟燭的生日蛋糕">
+
+        </button>
+
+
+        <div
+            class="response"
+            id="wishResponse">
+        </div>
+
+    </div>
+
+
+    <button
+        class="next"
+        id="wishNext"
+        style="display:none"
+        onclick="go(11)">
+        我許好了 ♡
+    </button>
+
+</section>
+
+
+<!-- =========================
+     11 VIDEO
+========================= -->
+
+<section class="scene" id="scene11">
+
+    <div class="card">
+
+        <h1 class="title">
+            ONE MORE DELIVERY
+        </h1>
+
+        <div class="subtitle">
+            還有一個東西
+        </div>
+
+
+        <video
+            class="video"
+            controls
+            playsinline>
+
+            <source
+                src="assets/birthday-video.mp4"
+                type="video/mp4">
+
+        </video>
+
+    </div>
+
+
+    <button
+        class="next"
+        onclick="go(12)">
+        最後一個
+    </button>
+
+</section>
+
+
+<!-- =========================
+     12 END
+========================= -->
+
+<section class="scene" id="scene12">
+
+    <div class="center">
+
+        <img
+            class="opening-character"
+            src="assets/together.png"
+            alt="泰米和綺綺">
+
+        <h1 class="big-title">
+            Happy Birthday ♡
+        </h1>
+
+        <div class="scene-text">
+            See you in Boston!
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="interactionModal"
+    onclick="modalBackgroundClick(event)">
+
+    <div
+        class="modal-box"
+        onclick="event.stopPropagation()">
+
+        <img
+            class="modal-image"
+            id="modalImage"
+            src=""
+            alt="">
+
+        <div
+            class="modal-text"
+            id="modalText">
+        </div>
+
+        <div
+            class="modal-small"
+            id="modalSmall">
+        </div>
+
+        <button
+            class="modal-button"
+            id="modalButton">
+            好啦
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   GLOBAL
+========================= */
+
+const TOTAL_SCENES = 12
+
+let currentScene = 1
+let ratingCount = 0
+let backupCount = 0
+
+let currentModalType = null
+let phoneStep = 0
+
+let candleBlown = false
+
+
+/* =========================
+   SCENE
+========================= */
+
+function go(number) {
+
+    closeModal()
+
+    document
+        .querySelectorAll(".scene")
+        .forEach(scene => {
+            scene.classList.remove("active")
+        })
+
+
+    const target =
+        document.getElementById(
+            "scene" + number
+        )
+
+
+    if (!target) return
+
+
+    target.classList.add("active")
+
+    currentScene = number
+
+
+    document
+        .getElementById("progressBar")
+        .style.width =
+            (
+                number /
+                TOTAL_SCENES *
+                100
+            ) + "%"
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+}
+
+
+/* =========================
+   RESPONSE
+========================= */
+
+function showResponse(id, text) {
+
+    const box =
+        document.getElementById(id)
+
+
+    if (!box) return
+
+
+    box.textContent = text
+
+    box.classList.add("show")
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+function openModal({
+    image,
+    text,
+    small = "",
+    button = "好啦",
+    action = closeModal,
+    type = "normal"
+}) {
+
+    currentModalType = type
+
+
+    const modal =
+        document.getElementById(
+            "interactionModal"
+        )
+
+    const modalImage =
+        document.getElementById(
+            "modalImage"
+        )
+
+
+    modalImage.src = image
+
+    modalImage.style.display =
+        image ? "block" : "none"
+
+
+    document
+        .getElementById(
+            "modalText"
+        )
+        .textContent = text
+
+
+    const smallBox =
+        document.getElementById(
+            "modalSmall"
+        )
+
+
+    smallBox.textContent = small
+
+    smallBox.style.display =
+        small ? "block" : "none"
+
+
+    const buttonElement =
+        document.getElementById(
+            "modalButton"
+        )
+
+
+    buttonElement.textContent =
+        button
+
+
+    buttonElement.onclick =
+        action
+
+
+    modal.classList.add("show")
+}
+
+
+function closeModal() {
+
+    document
+        .getElementById(
+            "interactionModal"
+        )
+        .classList.remove("show")
+
+
+    currentModalType = null
+}
+
+
+function modalBackgroundClick(event) {
+
+    if (
+        currentModalType ===
+        "phone"
+    ) {
+        return
+    }
+
+
+    closeModal()
+}
+
+
+/* =========================
+   泰米
+========================= */
+
+function boy(type) {
+
+    if (type === "name") {
+
+        showResponse(
+            "boyResponse",
+            "就是你阿寶"
+        )
+
+        return
+    }
+
+
+    if (type === "birthday") {
+
+        showResponse(
+            "boyResponse",
+            "9月26日 我沒有忘記ㄛ"
+        )
+
+        return
+    }
+
+
+    if (type === "age") {
+
+        showResponse(
+            "boyResponse",
+            "31歲 有點老了XD"
+        )
+
+        return
+    }
+
+
+    if (type === "potato") {
+
+        openModal({
+
+            image:
+                "assets/tai_potato.png",
+
+            text:
+                "開啟馬鈴薯模式",
+
+            button:
+                "好啦起來"
+        })
+
+        return
+    }
+
+
+    if (type === "skill") {
+
+        showResponse(
+            "boyResponse",
+            "不想努力ㄌ...."
+        )
+
+        return
+    }
+
+
+    if (type === "phone") {
+
+        startPhoneStory()
+
+        return
+    }
+
+
+    if (type === "rating") {
+
+        ratingCount++
+
+        addHeart()
+
+
+        if (ratingCount === 1) {
+
+            showResponse(
+                "boyResponse",
+                "繼續繼續"
+            )
+        }
+
+        else if (
+            ratingCount === 2
+        ) {
+
+            showResponse(
+                "boyResponse",
+                "tap tap"
+            )
+        }
+
+        else if (
+            ratingCount === 3
+        ) {
+
+            showResponse(
+                "boyResponse",
+                "其實還可以再多一點"
+            )
+        }
+
+
+        else if (
+            ratingCount === 4
+        ) {
+
+            openModal({
+
+                image:
+                    "assets/chi_shy.png",
+
+                text:
+                    "被發現很喜歡你ㄌ><",
+
+                button:
+                    "還可以再按",
+
+                action:
+                    closeModal
+            })
+        }
+
+
+        else if (
+            ratingCount === 6
+        ) {
+
+            openModal({
+
+                image:
+                    "assets/chi_love.png",
+
+                text:
+                    "太多ㄌ >///<",
+
+                small:
+                    "但是可以繼續",
+
+                button:
+                    "嘿嘿",
+
+                action:
+                    closeModal
+            })
+        }
+
+
+        else if (
+            ratingCount >= 10
+        ) {
+
+            showResponse(
+                "boyResponse",
+                "真的滿出來ㄌ ♡"
+            )
+
+            floatingHearts()
+        }
+
+        return
+    }
+}
+
+
+/* =========================
+   PHONE STORY
+========================= */
+
+function startPhoneStory() {
+
+    phoneStep = 1
+
+
+    openModal({
+
+        image:
+            "assets/tai_phone.png",
+
+        text:
+            "一直滑",
+
+        button:
+            "到底在滑什麼",
+
+        action:
+            nextPhoneStep,
+
+        type:
+            "phone"
+    })
+}
+
+
+function nextPhoneStep() {
+
+    phoneStep++
+
+
+    if (phoneStep === 2) {
+
+        openModal({
+
+            image:
+                "assets/tai_phone.png",
+
+            text:
+                "到底有什麼好滑的",
+
+            button:
+                "還在滑...",
+
+            action:
+                nextPhoneStep,
+
+            type:
+                "phone"
+        })
+
+        return
+    }
+
+
+    if (phoneStep === 3) {
+
+        openModal({
+
+            image:
+                "assets/chi_angry.png",
+
+            text:
+                "快看看我！",
+
+            small:
+                "手機到底有什麼好看的啦",
+
+            button:
+                "好啦好啦",
+
+            action:
+                finishPhoneStory,
+
+            type:
+                "phone"
+        })
+
+        return
+    }
+}
+
+
+function finishPhoneStory() {
+
+    closeModal()
+
+    showResponse(
+        "boyResponse",
+        "這樣才對 ♡"
+    )
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+function addHeart() {
+
+    const container =
+        document.getElementById(
+            "ratingHearts"
+        )
+
+
+    if (
+        container.children.length < 12
+    ) {
+
+        const heart =
+            document.createElement(
+                "span"
+            )
+
+        heart.className =
+            "heart"
+
+        container.appendChild(
+            heart
+        )
+    }
+
+    else {
+
+        floatingHearts()
+    }
+}
+
+
+function floatingHearts() {
+
+    for (
+        let i = 0;
+        i < 7;
+        i++
+    ) {
+
+        const heart =
+            document.createElement(
+                "div"
+            )
+
+
+        heart.className =
+            "float-heart"
+
+
+        heart.style.left =
+            (
+                20 +
+                Math.random() * 60
+            ) + "%"
+
+
+        heart.style.bottom =
+            (
+                40 +
+                Math.random() * 100
+            ) + "px"
+
+
+        document.body.appendChild(
+            heart
+        )
+
+
+        setTimeout(
+            () => heart.remove(),
+            1700
+        )
+    }
+}
+
+
+/* =========================
+   綺綺
+========================= */
+
+function girl(type) {
+
+    if (type === "name") {
+
+        showResponse(
+            "girlResponse",
+            "綺綺是你女朋友喔喔"
+        )
+
+        return
+    }
+
+
+    if (type === "where") {
+
+        showResponse(
+            "girlResponse",
+            "Boston...有龍蝦的那裡"
+        )
+
+        return
+    }
+
+
+    if (type === "boyfriend") {
+
+        showResponse(
+            "girlResponse",
+            "Taiwan 想回家了！"
+        )
+
+        return
+    }
+
+
+    if (type === "mission") {
+
+        showResponse(
+            "girlResponse",
+            "我正在想辦法混進你的生日"
+        )
+
+        return
+    }
+
+
+    if (type === "delivery") {
+
+        showResponse(
+            "girlResponse",
+            "女朋友本人寄送失敗"
+        )
+
+        return
+    }
+
+
+    if (type === "why") {
+
+        showResponse(
+            "girlResponse",
+            "太————遠————ㄌ"
+        )
+
+        return
+    }
+
+
+    if (type === "backup") {
+
+        backupCount++
+
+
+        if (backupCount === 1) {
+
+            document
+                .getElementById(
+                    "backupAnswer"
+                )
+                .textContent =
+                    "..."
+
+
+            showResponse(
+                "girlResponse",
+                "..."
+            )
+        }
+
+
+        else if (
+            backupCount === 2
+        ) {
+
+            document
+                .getElementById(
+                    "backupAnswer"
+                )
+                .textContent =
+                    "等等"
+
+
+            showResponse(
+                "girlResponse",
+                "等等 我想到ㄌ"
+            )
+        }
+
+
+        else {
+
+            document
+                .getElementById(
+                    "backupAnswer"
+                )
+                .textContent =
+                    "有了"
+
+
+            openModal({
+
+                image:
+                    "assets/chi_cake.png",
+
+                text:
+                    "本人不行的話 那就換別的",
+
+                button:
+                    "嘿嘿有辦法ㄌ"
+            })
+        }
+
+        return
+    }
+}
+
+
+/* =========================
+   S PATH
+========================= */
+
+function getPoint(
+    path,
+    percent
+) {
+
+    const length =
+        path.getTotalLength()
+
+
+    return path.getPointAtLength(
+        length * percent
+    )
+}
+
+
+function moveAlong(
+    image,
+    path,
+    stage,
+    from,
+    to,
+    duration,
+    callback
+) {
+
+    const start =
+        performance.now()
+
+
+    image.style.opacity = "1"
+
+
+    function frame(now) {
+
+        const raw =
+            Math.min(
+                (
+                    now -
+                    start
+                ) /
+                duration,
+                1
+            )
+
+
+        const eased =
+            raw *
+            raw *
+            (
+                3 -
+                2 * raw
+            )
+
+
+        const percent =
+            from +
+            (
+                to -
+                from
+            ) *
+            eased
+
+
+        const point =
+            getPoint(
+                path,
+                percent
+            )
+
+
+        const x =
+            point.x /
+            340 *
+            stage.clientWidth
+
+
+        const y =
+            point.y /
+            420 *
+            stage.clientHeight
+
+
+        image.style.left =
+            (
+                x -
+                image.offsetWidth / 2
+            ) + "px"
+
+
+        image.style.top =
+            (
+                y -
+                image.offsetHeight / 2
+            ) + "px"
+
+
+        if (raw < 1) {
+
+            requestAnimationFrame(
+                frame
+            )
+        }
+
+        else if (callback) {
+
+            callback()
+        }
+    }
+
+
+    requestAnimationFrame(
+        frame
+    )
+}
+
+
+/* =========================
+   GIRLFRIEND DELIVERY
+========================= */
+
+function tryDelivery() {
+
+    const chi =
+        document.getElementById(
+            "deliveryChi"
+        )
+
+    const path =
+        document.getElementById(
+            "deliveryPath"
+        )
+
+    const stage =
+        document.getElementById(
+            "deliveryStage"
+        )
+
+    const button =
+        document.getElementById(
+            "deliveryButton"
+        )
+
+
+    button.disabled = true
+
+
+    showResponse(
+        "deliveryResponse",
+        "女朋友本人出發"
+    )
+
+
+    moveAlong(
+        chi,
+        path,
+        stage,
+        0,
+        .58,
+        2200,
+
+        () => {
+
+            showResponse(
+                "deliveryResponse",
+                "..."
+            )
+
+
+            setTimeout(
+                () => {
+
+                    moveAlong(
+                        chi,
+                        path,
+                        stage,
+                        .58,
+                        0,
+                        1300,
+
+                        () => {
+
+                            chi.style.opacity =
+                                "0"
+
+
+                            showResponse(
+                                "deliveryResponse",
+                                "FAILED × 太遠ㄌ"
+                            )
+
+
+                            button.style.display =
+                                "none"
+
+
+                            document
+                                .getElementById(
+                                    "planButton"
+                                )
+                                .style.display =
+                                    "block"
+                        }
+                    )
+
+                },
+                450
+            )
+        }
+    )
+}
+
+
+/* =========================
+   CAKE DELIVERY
+========================= */
+
+function sendCake() {
+
+    const cake =
+        document.getElementById(
+            "movingCake"
+        )
+
+    const path =
+        document.getElementById(
+            "cakePath"
+        )
+
+    const stage =
+        document.getElementById(
+            "cakeStage"
+        )
+
+    const button =
+        document.getElementById(
+            "cakeButton"
+        )
+
+
+    button.disabled = true
+
+
+    showResponse(
+        "cakeResponse",
+        "Plan B 出發"
+    )
+
+
+    moveAlong(
+        cake,
+        path,
+        stage,
+        0,
+        1,
+        3000,
+
+        () => {
+
+            cake.style.opacity =
+                "0"
+
+
+            showResponse(
+                "cakeResponse",
+                "CAKE DELIVERY SUCCESS ✓"
+            )
+
+
+            button.style.display =
+                "none"
+
+
+            document
+                .getElementById(
+                    "cakeNext"
+                )
+                .style.display =
+                    "block"
+        }
+    )
+}
+
+
+/* =========================
+   WISH
+========================= */
+
+function blowCandle() {
+
+    if (candleBlown) {
+        return
+    }
+
+
+    candleBlown = true
+
+
+    const cake =
+        document.getElementById(
+            "wishCake"
+        )
+
+
+    cake.style.opacity =
+        ".55"
+
+
+    cake.style.transform =
+        "scale(.97)"
+
+
+    setTimeout(
+        () => {
+
+            cake.src =
+                "assets/blew.png"
+
+
+            cake.style.opacity =
+                "1"
+
+
+            cake.style.transform =
+                "scale(1)"
+
+        },
+        180
+    )
+
+
+    showResponse(
+        "wishResponse",
+        "願望不能跟我說ㄛ"
+    )
+
+
+    document
+        .getElementById(
+            "wishNext"
+        )
+        .style.display =
+            "block"
+}
+
+
+/* =========================
+   INIT
+========================= */
+
+go(1)
+
+</script>
+
+</body>
+</html>
